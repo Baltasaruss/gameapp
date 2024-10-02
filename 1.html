@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .img {
+        height: 100vh;
+        width: auto;
+        z-index: 1;
+      }
+
+      .downimg {
+        position: absolute;
+        z-index: 0;
+        height: 100vh;
+        width: auto;
+      }
+
+      .audio {
+        position: absolute;
+        bottom: 0;
+        z-index: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="img" src="./Скрин 5 затемение 2 180x320.gif" alt="" />
+    <img class="downimg" src="./MainScreen logo 720X1280.gif" alt="" />
+    <audio
+      class="audio"
+      allow="autoplay"
+      src="./Эпик Версия 3.wav"
+      controls
+      autoplay
+    ></audio>
+  </body>
+
+  <script>
+    document.querySelector(".audio").play();
+
+    setTimeout(() => {
+      document.querySelector(".img").src =
+        "./STARTMainScreen logo 720X1280.gif";
+
+      setTimeout(() => {
+        document.querySelector(".img").style.display = "none";
+        document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+
+        document.querySelector(".audio").play();
+      }, 3000);
+    }, 55200);
+  </script>
+</html>
