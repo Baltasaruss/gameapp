@@ -32,6 +32,7 @@
         z-index: 0;
         height: 100vh;
         width: auto;
+        display: none;
       }
 
       .audio {
@@ -86,6 +87,7 @@
 
         setTimeout(() => {
           document.querySelector(".img").style.display = "none";
+          document.querySelector(".downimg").style.display = "block";
           document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
 
           document.querySelector(".audio").play();
