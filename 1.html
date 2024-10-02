@@ -37,13 +37,30 @@
       .audio {
         position: absolute;
         bottom: 0;
-        z-index: 3;
+        z-index: -2;
+      }
+
+      .continue {
+        width: 100%;
+        height: 100vh;
+        color: #aaa;
+        font-size: 18px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
       }
     </style>
   </head>
   <body>
-    <img class="img" src="./Скрин 5 затемение 2 180x320.gif" alt="" />
-    <img class="downimg" src="./MainScreen logo 720X1280.gif" alt="" />
+    <div class="continue">Tap anywhere to continue...</div>
+    <img class="img" alt="" />
+    <img class="downimg" alt="" />
     <audio
       class="audio"
       allow="autoplay"
@@ -54,18 +71,25 @@
   </body>
 
   <script>
-    document.querySelector(".audio").play();
+    document.querySelector(".continue").addEventListener("click", () => {
+      document.querySelector(".continue").style.display = "none";
+      document.querySelector(".audio").play();
 
-    setTimeout(() => {
-      document.querySelector(".img").src =
-        "./STARTMainScreen logo 720X1280.gif";
+      document.querySelector(".downimg").src = "./MainScreen logo 720X1280.gif";
+
+      document.querySelector(".img").src = "./Скрин 5 затемение 2 180x320.gif";
 
       setTimeout(() => {
-        document.querySelector(".img").style.display = "none";
-        document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+        document.querySelector(".img").src =
+          "./STARTMainScreen logo 720X1280.gif";
 
-        document.querySelector(".audio").play();
-      }, 3000);
-    }, 55200);
+        setTimeout(() => {
+          document.querySelector(".img").style.display = "none";
+          document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+
+          document.querySelector(".audio").play();
+        }, 3000);
+      }, 55200);
+    });
   </script>
 </html>
