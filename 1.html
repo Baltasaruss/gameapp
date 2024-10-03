@@ -21,7 +21,7 @@
         height: 100vh;
       }
 
-      .img {
+      .i {
         height: 100vh;
         width: auto;
         z-index: 1;
@@ -29,7 +29,7 @@
         width: 100%;
       }
 
-      .downimg {
+      .bi {
         position: absolute;
         z-index: 0;
         height: 100vh;
@@ -39,7 +39,7 @@
         display: none;
       }
 
-      .firstimg {
+      .ti {
         position: absolute;
         top: 0;
         width: 100%;
@@ -48,7 +48,7 @@
         z-index: 3;
       }
 
-      .audio {
+      .a {
         position: absolute;
         bottom: 0;
         z-index: -2;
@@ -74,40 +74,41 @@
   </head>
   <body>
     <div class="continue">Tap anywhere to continue...</div>
-    <img class="firstimg" alt="" />
-    <img class="img" alt="" />
-    <img class="downimg" alt="" />
+    <img class="ti" src="Скрин 5 затемнение 720x1280 (1).gif" alt="" />
+    <img class="i" alt="" />
+    <img class="bi" alt="" />
     <audio class="audio" allow="autoplay" controls autoplay></audio>
   </body>
 
   <script>
-    document.querySelector(".audio").src = "./Эпик Версия 3.wav";
+    const a = document.querySelector(".audio");
+    const ti = document.querySelector(".ti");
+    const i = document.querySelector(".i");
+    const bi = document.querySelector(".bi");
 
-    document.querySelector(".continue").addEventListener("click", () => {
-      document.querySelector(".continue").style.display = "none";
-      document.querySelector(".firstimg").src =
-        "./Скрин 5 затемение 2 720x1280 (1).gif";
-      document.querySelector(".audio").play();
+    a.src = "./Эпик Версия 3.wav";
 
-      setTimeout(async () => {
-        await (document.querySelector(".firstimg").style.display = "none");
+    document.querySelector(".continue").addEventListener("click", async () => {
+      await (ti.src = "Скрин 5 затемнение 720x1280 (1).gif");
+      await a.play();
 
-        await (document.querySelector(".img").src =
-          "./STARTMainScreen logo 720X1280.gif");
-
-        document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
-        document.querySelector(".audio").play();
+      setTimeout(() => {
+        ti.style.display = "none";
+        i.style.display = "flex";
+        i.src = "STARTMainScreen logo 720X1280.gif";
+        a.src = "ФОНЧИК ЗАГОТОВКА.gif";
+        a.play();
 
         setTimeout(() => {
-          document.querySelector(".img").style.display = "none";
-          document.querySelector(".downimg").style.display = "block !important";
+          i.style.display = "none";
+          bi.style.display = "none";
+          bi.src = "./MainScreen logo 720X1280.gif";
         }, 3000);
 
-        setInterval(async () => {
-          await (document.querySelector(".audio").src =
-            "./ФОНЧИК ЗАГОТОВКА.wav");
-          document.querySelector(".audio").play();
-        }, 40000);
+        setInterval(() => {
+          a.src = "ФОНЧИК ЗАГОТОВКА.gif";
+          a.play();
+        }, 4000);
       }, 54000);
     });
   </script>
