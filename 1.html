@@ -67,19 +67,14 @@
     <div class="continue">Tap anywhere to continue...</div>
     <img class="img" alt="" />
     <img class="downimg" alt="" />
-    <audio
-      class="audio"
-      allow="autoplay"
-      src="./Эпик Версия 3.wav"
-      controls
-      autoplay
-    ></audio>
+    <audio class="audio" allow="autoplay" controls autoplay></audio>
   </body>
 
   <script>
     document.querySelector(".continue").addEventListener("click", () => {
       document.querySelector(".continue").style.display = "none";
       document.querySelector(".audio").play();
+      document.querySelector(".audio").src = "./Эпик Версия 3.wav";
 
       document.querySelector(".downimg").src = "./MainScreen logo 720X1280.gif";
 
@@ -102,7 +97,7 @@
         setInterval(() => {
           document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
         }, 40000);
-      }, 53500);
+      }, 54500);
     });
   </script>
 </html>
