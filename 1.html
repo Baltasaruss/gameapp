@@ -74,7 +74,7 @@
   </head>
   <body>
     <div class="continue">Tap anywhere to continue...</div>
-    <img class="ti" src="Скрин 5 затемнение 720x1280 (1).gif" alt="" />
+    <img class="ti" src="./Скрин 5 затемение 2 720x1280 (1).gif" alt="" />
     <img class="i" alt="" />
     <img class="bi" alt="" />
     <audio class="a" allow="autoplay" controls autoplay></audio>
@@ -90,14 +90,14 @@
 
     document.querySelector(".continue").addEventListener("click", async () => {
       document.querySelector(".continue").style.display = "none";
-      ti.src = "Скрин 5 затемнение 720x1280 (1).gif";
+      ti.src = "./Скрин 5 затемение 2 720x1280 (1).gif";
       await a.play();
 
       setTimeout(() => {
         ti.style.display = "none";
         i.style.display = "flex";
         i.src = "./STARTMainScreen logo 720X1280.gif";
-        a.src = "ФОНЧИК ЗАГОТОВКА.gif";
+        a.src = "./ФОНЧИК ЗАГОТОВКА.gif";
         a.play();
 
         setTimeout(() => {
@@ -107,7 +107,7 @@
         }, 3000);
 
         setInterval(() => {
-          a.src = "ФОНЧИК ЗАГОТОВКА.gif";
+          a.src = "./ФОНЧИК ЗАГОТОВКА.gif";
           a.play();
         }, 4000);
       }, 54000);
