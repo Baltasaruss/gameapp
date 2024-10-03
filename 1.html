@@ -21,7 +21,8 @@
         height: 100vh;
       }
 
-      .i {
+      .i,
+      .iw {
         height: 100vh;
         width: auto;
         z-index: 2;
@@ -29,7 +30,8 @@
         width: 100%;
       }
 
-      .bi {
+      .bi,
+      .biw {
         position: absolute;
         z-index: 0;
         height: auto;
@@ -38,7 +40,8 @@
         z-index: 1;
       }
 
-      .ti {
+      .ti,
+      .tiw {
         position: absolute;
         top: 0;
         width: 100%;
@@ -69,13 +72,25 @@
         justify-content: center;
         background: #fff;
       }
+
+      .w {
+        height: 100vh;
+        overflow: hidden;
+        background: #000;
+      }
     </style>
   </head>
   <body>
     <div class="continue">Tap anywhere to continue...</div>
-    <img class="ti" src="./Скрин 5 затемение 2 720x1280 (1).gif" alt="" />
-    <img class="i" alt="" />
-    <img class="bi" src="./MainScreen logo 720X1280.gif" alt="" />
+    <div class="tiw w">
+      <img class="ti" src="./Скрин 5 затемение 2 720x1280 (1).gif" alt="" />
+    </div>
+    <div class="w iw">
+      <img class="i" alt="" />
+    </div>
+    <div class="w biw">
+      <img class="bi" src="./MainScreen logo 720X1280.gif" alt="" />
+    </div>
     <audio class="a" allow="autoplay" controls autoplay></audio>
   </body>
 
@@ -84,6 +99,8 @@
     const ti = document.querySelector(".ti");
     const i = document.querySelector(".i");
     const bi = document.querySelector(".bi");
+    const tiw = document.querySelector(".tiw");
+    const iw = document.querySelector(".iw");
 
     a.src = "./Эпик Версия 3.wav";
 
@@ -93,12 +110,12 @@
       await a.play();
 
       setTimeout(async () => {
-        ti.style.display = "none";
+        tiw.style.display = "none";
         a.src = "./ФОНЧИК ЗАГОТОВКА.wav";
         a.play();
 
         setTimeout(async () => {
-          i.style.display = "none";
+          iw.style.display = "none";
         }, 2600);
 
         setInterval(() => {
