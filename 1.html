@@ -74,7 +74,7 @@
     <div class="continue">Tap anywhere to continue...</div>
     <img class="ti" src="./Скрин 5 затемение 2 720x1280 (1).gif" alt="" />
     <img class="i" alt="" />
-    <img class="bi" alt="" />
+    <img class="bi" src="./MainScreen logo 720X1280.gif" alt="" />
     <audio class="a" allow="autoplay" controls autoplay></audio>
   </body>
 
@@ -91,14 +91,12 @@
       ti.src = "./Скрин 5 затемение 2 720x1280 (1).gif";
       await a.play();
 
-      setTimeout(() => {
-        i.src = "./STARTMainScreen logo 720X1280.gif";
+      setTimeout(async () => {
         ti.style.display = "none";
         a.src = "./ФОНЧИК ЗАГОТОВКА.wav";
         a.play();
 
-        setTimeout(() => {
-          bi.src = "./MainScreen logo 720X1280.gif";
+        setTimeout(async () => {
           i.style.display = "none";
         }, 3400);
 
@@ -107,6 +105,10 @@
           a.play();
         }, 4000);
       }, 54500);
+
+      setTimeout(() => {
+        i.src = "./STARTMainScreen logo 720X1280.gif";
+      }, 51000);
     });
   </script>
 </html>
