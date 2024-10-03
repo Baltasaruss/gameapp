@@ -14,7 +14,7 @@
 
       body {
         width: 100%;
-
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -25,12 +25,16 @@
         height: 100vh;
         width: auto;
         z-index: 1;
+        max-width: 420px;
+        width: 100%;
       }
 
       .downimg {
         position: absolute;
         z-index: 0;
         height: 100vh;
+        max-width: 420px;
+        width: 100%;
         width: auto;
         display: none;
       }
@@ -79,19 +83,25 @@
 
       document.querySelector(".downimg").src = "./MainScreen logo 720X1280.gif";
 
-      document.querySelector(".img").src = "./Скрин 5 затемение 2 180x320.gif";
+      document.querySelector(".img").src =
+        "./Скрин 5 затемение 2 720x1280 (1).gif";
 
       setTimeout(() => {
         document.querySelector(".img").src =
           "./STARTMainScreen logo 720X1280.gif";
 
+        document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+
         setTimeout(() => {
           document.querySelector(".img").style.display = "none";
           document.querySelector(".downimg").style.display = "block";
-          document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
 
           document.querySelector(".audio").play();
         }, 3000);
+
+        setInterval(() => {
+          document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+        }, 40000);
       }, 54000);
     });
   </script>
