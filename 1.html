@@ -39,6 +39,15 @@
         display: none;
       }
 
+      .firstimg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-width: 420px;
+        height: 100vh;
+        z-index: 3;
+      }
+
       .audio {
         position: absolute;
         bottom: 0;
@@ -76,25 +85,28 @@
 
     document.querySelector(".continue").addEventListener("click", async () => {
       document.querySelector(".continue").style.display = "none";
-      await (document.querySelector(".img").src =
+      await (document.querySelector(".firstimg").src =
         "./Скрин 5 затемение 2 720x1280 (1).gif");
-      await document.querySelector(".audio").play();
+      document.querySelector(".audio").play();
 
-      setTimeout(() => {
-        document.querySelector(".img").src =
-          "./STARTMainScreen logo 720X1280.gif";
+      setTimeout(async () => {
+        await (document.querySelector(".firstimg").style.display = "none");
+
+        await (document.querySelector(".img").src =
+          "./STARTMainScreen logo 720X1280.gif");
 
         document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+        document.querySelector(".audio").play();
 
         setTimeout(() => {
           document.querySelector(".img").style.display = "none";
           document.querySelector(".downimg").style.display = "block";
-
-          document.querySelector(".audio").play();
         }, 3000);
 
-        setInterval(() => {
-          document.querySelector(".audio").src = "./ФОНЧИК ЗАГОТОВКА.wav";
+        setInterval(async () => {
+          await (document.querySelector(".audio").src =
+            "./ФОНЧИК ЗАГОТОВКА.wav");
+          document.querySelector(".audio").play();
         }, 40000);
       }, 54000);
     });
