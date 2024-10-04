@@ -24,7 +24,6 @@
       .i,
       .iw {
         height: 100vh;
-        width: auto;
         z-index: 2;
         max-width: 420px;
         width: 100%;
@@ -34,10 +33,10 @@
       .biw {
         position: absolute;
         z-index: 0;
-        height: auto;
         max-width: 420px;
         width: 100%;
         z-index: 1;
+        height: 100%;
       }
 
       .ti,
@@ -111,7 +110,7 @@
 
       setTimeout(async () => {
         tiw.style.display = "none";
-     await  ( a.src = "./ФОНЧИК ЗАГОТОВКА.wav");
+        await (a.src = "./ФОНЧИК ЗАГОТОВКА.wav");
         a.play();
 
         setTimeout(async () => {
