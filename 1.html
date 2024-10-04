@@ -46,6 +46,10 @@
         height: 100%;
       }
 
+      .bi{
+        height: auto;
+      }
+
       .ti,
       .tiw {
         position: absolute;
@@ -118,7 +122,7 @@
 
       setTimeout(async () => {
         tiw.style.display = "none";
-        await (a.src = "./ФОНЧИК ЗАГОТОВКА.wav");
+        await (a.src = "./ФОНЧИК 1.wav");
         a.play();
 
         setTimeout(async () => {
@@ -126,9 +130,9 @@
         }, 2600);
 
         setInterval(() => {
-          a.src = "./ФОНЧИК ЗАГОТОВКА.wav";
+          a.src = "./ФОНЧИК 1.wav";
           a.play();
-        }, 40000);
+        }, 120000);
       }, 55000);
 
       setTimeout(() => {
